@@ -1,0 +1,6 @@
+2021/10/29 16:31:40          https://localhost:44398/WebForm1.aspx          select   TeacherId,TeacherPwd,TeacherName,Phone,qq,manager,stated,JYS,departmentId  from teacherinfo  where TeacherId='2220522002' 
+2021/10/29 16:32:41          https://localhost:44398/WebForm1.aspx          select   TeacherId,TeacherPwd,TeacherName,Phone,qq,manager,stated,JYS,departmentId  from teacherinfo  where TeacherId='2220382006' 
+2021/10/29 16:32:53          https://localhost:44398/WebForm1.aspx          select   TeacherId,TeacherPwd,TeacherName,Phone,qq,manager,stated,JYS,departmentId  from teacherinfo  where TeacherId='2220342985' 
+2021/10/29 16:36:01          https://localhost:44398/WebForm1.aspx          select * FROM teacherinfo
+2021/10/29 16:36:29          https://localhost:44398/WebForm1.aspx          select * FROM teacherinfo where TeacherName='°×Ñî'
+2021/10/29 16:37:11          https://localhost:44398/WebForm1.aspx          select * FROM teacherinfo where JYS='Èí¼þ½ÌÑÐÊÒ'
