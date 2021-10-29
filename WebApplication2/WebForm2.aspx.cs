@@ -17,8 +17,7 @@ namespace WebApplication2
         protected void Button1_Click(object sender, EventArgs e)
         {
             bysj.BLL.teacherinfo bll = new bysj.BLL.teacherinfo();
-            //System.Data.DataSet ds = bll.GetAllList();
-System.Data.DataSet ds = bll.GetList("TeacherName='马秀荣'");
+            System.Data.DataSet ds = bll.GetList("TeacherName='马秀荣'");
             GridView1.DataSource = ds;
             GridView1.DataBind();
             Response.Write(ds.Tables[0].Rows.Count);
