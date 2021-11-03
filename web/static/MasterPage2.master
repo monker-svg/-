@@ -1,0 +1,232 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Main styles for this application -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="app-header navbar">
+            <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">☰</button>
+            <a class="navbar-brand" href="http:www.baidu.com"></a>
+            <ul class="nav navbar-nav hidden-md-down">
+                <li class="nav-item">
+                    <a class="nav-link navbar-toggler sidebar-toggler" href="#">☰</a>
+                </li>
+
+                <li class="nav-item px-1">
+                    <a class="nav-link" href="#">编辑问题</a>
+                </li>
+                <li class="nav-item px-1">
+                    <a class="nav-link" href="#">编辑答案</a>
+                </li>
+                <li class="nav-item px-1">
+                    <a class="nav-link" href="#">用户管理</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <span class="hidden-md-down">admin</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+
+                        <div class="dropdown-header text-center">
+                            <strong>Account</strong>
+                        </div>
+
+                        <a class="dropdown-item" href="#"><i class="fa fa-bank"></i>Updates<span class="badge badge-info">42</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i>Messages<span class="badge badge-success">42</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i>Tasks<span class="badge badge-danger">42</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-comments"></i>Comments<span class="badge badge-warning">42</span></a>
+
+                        <div class="dropdown-header text-center">
+                            <strong>Account</strong>
+                        </div>
+
+                        <a class="dropdown-item" href="#"><i class="fa fa-bank"></i>Updates<span class="badge badge-info">42</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i>Messages<span class="badge badge-success">42</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-tasks"></i>Tasks<span class="badge badge-danger">42</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-comments"></i>Comments<span class="badge badge-warning">42</span></a>
+
+                    </div>
+                </li>
+                <li class="nav-item hidden-md-down">
+                    <a class="nav-link navbar-toggler aside-menu-toggler" href="#">☰</a>
+                </li>
+
+            </ul>
+        </header>
+        <div class="app-body">
+            <div class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"><i class="icon-speedometer"></i>菜单1 <span class="badge badge-info">NEW</span></a>
+                        </li>
+
+                        <li class="nav-title">分界线
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-anchor "></i>主菜单1</a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="components-buttons.html"><i class="icon-puzzle"></i>子菜单1.1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="components-social-buttons.html"><i class="icon-puzzle"></i>Social Buttons</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="components-cards.html"><i class="icon-puzzle"></i>Cards</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="components-forms.html"><i class="icon-puzzle"></i>Forms</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="components-modals.html"><i class="icon-puzzle"></i>Modals</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="components-switches.html"><i class="icon-puzzle"></i>Switches</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="components-tables.html"><i class="icon-puzzle"></i>Tables</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="components-tabs.html"><i class="icon-puzzle"></i>Tabs</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i>主菜单2</a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="icons-font-awesome.html"><i class="icon-star"></i>Font Awesome</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="icons-simple-line-icons.html"><i class="icon-star"></i>Simple Line Icons</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="widgets.html"><i class="icon-calculator"></i>主菜单3 <span class="badge badge-info">NEW</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="nav-title">Extras
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i>Pages</a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages-login.html" target="_top"><i class="icon-star"></i>Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages-register.html" target="_top"><i class="icon-star"></i>Register</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages-404.html" target="_top"><i class="icon-star"></i>Error 404</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages-500.html" target="_top"><i class="icon-star"></i>Error 500</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+
+            <main class="main">
+
+                <!-- Breadcrumb -->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">Home</li>
+                    <li class="breadcrumb-item"><a href="#">Admin</a>
+                    </li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+
+                    <!-- Breadcrumb Menu-->
+                    <li class="breadcrumb-menu hidden-md-down">
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                            <a class="btn btn-secondary" href="#"><i class="icon-speech"></i></a>
+                            <a class="btn btn-secondary" href="./"><i class="icon-graph"></i>&nbsp;Dashboard</a>
+                            <a class="btn btn-secondary" href="#"><i class="icon-settings"></i>&nbsp;Settings</a>
+                        </div>
+                    </li>
+                </ol>
+
+
+                <div class="container-fluid">
+                    <div class="animated fadeIn">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Card title
+                                    </div>
+                                    <div class="card-block">
+
+                                        <asp:ContentPlaceHolder ID="CPH1" runat="server"></asp:ContentPlaceHolder>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.col-->
+                            <div class="col-sm-6 col-md-12">
+                                <div class="card">
+                                    <div class="card-block">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+                                    ea commodo consequat.
+                                    </div>
+                                    <div class="card-footer">Card footer</div>
+                                </div>
+                            </div>
+                            <!--/.col-->
+                        </div>
+                        <!--/.row-->
+
+                    </div>
+
+                </div>
+                <!-- /.conainer-fluid -->
+            </main>
+
+
+
+        </div>
+
+
+        <footer class="app-footer">
+            Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://www.17sucai.com/">
+        &#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+        </footer>
+    </form>
+
+
+    <!-- Bootstrap and necessary plugins -->
+    <script src="assets/js/libs/jquery.min.js"></script>
+    <script src="assets/js/libs/tether.min.js"></script>
+    <script src="assets/js/libs/bootstrap.min.js"></script>
+    <script src="assets/js/libs/pace.min.js"></script>
+    <!-- Plugins and scripts required by all views -->
+    <script src="assets/js/libs/Chart.min.js"></script>
+
+
+    <!-- GenesisUI main scripts -->
+
+    <script src="js/app.js"></script>
+</body>
+</html>

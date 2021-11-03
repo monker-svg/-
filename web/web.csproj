@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -23,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.2</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,11 +69,342 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GLY\index.aspx" />
+    <Content Include="GLY\学生列表.aspx" />
+    <Content Include="GLY\批量添加student.aspx" />
+    <Content Include="GLY\系别列表.aspx" />
+    <Content Include="static\assets\js\libs\bootstrap.min.js" />
+    <Content Include="static\assets\js\libs\Chart.min.js" />
+    <Content Include="static\assets\js\libs\jquery.min.js" />
+    <Content Include="static\assets\js\libs\pace.min.js" />
+    <Content Include="static\assets\js\libs\tether.min.js" />
+    <Content Include="static\blank.html" />
+    <Content Include="static\charts.html" />
+    <Content Include="static\components-buttons.html" />
+    <Content Include="static\components-cards.html" />
+    <Content Include="static\components-forms.html" />
+    <Content Include="static\components-modals.html" />
+    <Content Include="static\components-social-buttons.html" />
+    <Content Include="static\components-switches.html" />
+    <Content Include="static\components-tables.html" />
+    <Content Include="static\components-tabs.html" />
+    <Content Include="static\css\font-awesome.css" />
+    <Content Include="static\css\font-awesome.min.css" />
+    <Content Include="static\css\simple-line-icons.css" />
+    <Content Include="static\css\style.css" />
+    <Content Include="static\fonts\fontawesome-webfont.svg" />
+    <Content Include="static\fonts\Simple-Line-Icons.svg" />
+    <Content Include="static\gulpfile.js" />
+    <Content Include="static\icons-font-awesome.html" />
+    <Content Include="static\icons-simple-line-icons.html" />
+    <Content Include="static\img\avatars\1.jpg" />
+    <Content Include="static\img\avatars\2.jpg" />
+    <Content Include="static\img\avatars\3.jpg" />
+    <Content Include="static\img\avatars\4.jpg" />
+    <Content Include="static\img\avatars\5.jpg" />
+    <Content Include="static\img\avatars\6.jpg" />
+    <Content Include="static\img\avatars\7.jpg" />
+    <Content Include="static\img\avatars\8.jpg" />
+    <Content Include="static\img\favicon.png" />
+    <Content Include="static\img\flags\Afghanistan.png" />
+    <Content Include="static\img\flags\African Union.png" />
+    <Content Include="static\img\flags\Albania.png" />
+    <Content Include="static\img\flags\Algeria.png" />
+    <Content Include="static\img\flags\American Samoa.png" />
+    <Content Include="static\img\flags\Andorra.png" />
+    <Content Include="static\img\flags\Angola.png" />
+    <Content Include="static\img\flags\Anguilla.png" />
+    <Content Include="static\img\flags\Antarctica.png" />
+    <Content Include="static\img\flags\Antigua &amp; Barbuda.png" />
+    <Content Include="static\img\flags\Arab League.png" />
+    <Content Include="static\img\flags\Argentina.png" />
+    <Content Include="static\img\flags\Armenia.png" />
+    <Content Include="static\img\flags\Aruba.png" />
+    <Content Include="static\img\flags\ASEAN.png" />
+    <Content Include="static\img\flags\Australia.png" />
+    <Content Include="static\img\flags\Austria.png" />
+    <Content Include="static\img\flags\Azerbaijan.png" />
+    <Content Include="static\img\flags\Bahamas.png" />
+    <Content Include="static\img\flags\Bahrain.png" />
+    <Content Include="static\img\flags\Bangladesh.png" />
+    <Content Include="static\img\flags\Barbados.png" />
+    <Content Include="static\img\flags\Belarus.png" />
+    <Content Include="static\img\flags\Belgium.png" />
+    <Content Include="static\img\flags\Belize.png" />
+    <Content Include="static\img\flags\Benin.png" />
+    <Content Include="static\img\flags\Bermuda.png" />
+    <Content Include="static\img\flags\Bhutan.png" />
+    <Content Include="static\img\flags\Bolivia.png" />
+    <Content Include="static\img\flags\Bosnia &amp; Herzegovina.png" />
+    <Content Include="static\img\flags\Botswana.png" />
+    <Content Include="static\img\flags\Brazil.png" />
+    <Content Include="static\img\flags\Brunei.png" />
+    <Content Include="static\img\flags\Bulgaria.png" />
+    <Content Include="static\img\flags\Burkina Faso.png" />
+    <Content Include="static\img\flags\Burundi.png" />
+    <Content Include="static\img\flags\Cambodja.png" />
+    <Content Include="static\img\flags\Cameroon.png" />
+    <Content Include="static\img\flags\Canada.png" />
+    <Content Include="static\img\flags\Cape Verde.png" />
+    <Content Include="static\img\flags\CARICOM.png" />
+    <Content Include="static\img\flags\Cayman Islands.png" />
+    <Content Include="static\img\flags\Central African Republic.png" />
+    <Content Include="static\img\flags\Chad.png" />
+    <Content Include="static\img\flags\Chile.png" />
+    <Content Include="static\img\flags\China.png" />
+    <Content Include="static\img\flags\CIS.png" />
+    <Content Include="static\img\flags\Colombia.png" />
+    <Content Include="static\img\flags\Commonwealth.png" />
+    <Content Include="static\img\flags\Comoros.png" />
+    <Content Include="static\img\flags\Congo-Brazzaville.png" />
+    <Content Include="static\img\flags\Congo-Kinshasa%28Zaire%29.png" />
+    <Content Include="static\img\flags\Cook Islands.png" />
+    <Content Include="static\img\flags\Costa Rica.png" />
+    <Content Include="static\img\flags\Cote d%27Ivoire.png" />
+    <Content Include="static\img\flags\Croatia.png" />
+    <Content Include="static\img\flags\Cuba.png" />
+    <Content Include="static\img\flags\Cyprus.png" />
+    <Content Include="static\img\flags\Czech Republic.png" />
+    <Content Include="static\img\flags\Denmark.png" />
+    <Content Include="static\img\flags\Djibouti.png" />
+    <Content Include="static\img\flags\Dominica.png" />
+    <Content Include="static\img\flags\Dominican Republic.png" />
+    <Content Include="static\img\flags\Ecuador.png" />
+    <Content Include="static\img\flags\Egypt.png" />
+    <Content Include="static\img\flags\El Salvador.png" />
+    <Content Include="static\img\flags\England.png" />
+    <Content Include="static\img\flags\Equatorial Guinea.png" />
+    <Content Include="static\img\flags\Eritrea.png" />
+    <Content Include="static\img\flags\Estonia.png" />
+    <Content Include="static\img\flags\Ethiopia.png" />
+    <Content Include="static\img\flags\European Union.png" />
+    <Content Include="static\img\flags\Faroes.png" />
+    <Content Include="static\img\flags\Fiji.png" />
+    <Content Include="static\img\flags\Finland.png" />
+    <Content Include="static\img\flags\France.png" />
+    <Content Include="static\img\flags\Gabon.png" />
+    <Content Include="static\img\flags\Gambia.png" />
+    <Content Include="static\img\flags\Georgia.png" />
+    <Content Include="static\img\flags\Germany.png" />
+    <Content Include="static\img\flags\Ghana.png" />
+    <Content Include="static\img\flags\Gibraltar.png" />
+    <Content Include="static\img\flags\Greece.png" />
+    <Content Include="static\img\flags\Greenland.png" />
+    <Content Include="static\img\flags\Grenada.png" />
+    <Content Include="static\img\flags\Guadeloupe.png" />
+    <Content Include="static\img\flags\Guam.png" />
+    <Content Include="static\img\flags\Guatemala.png" />
+    <Content Include="static\img\flags\Guernsey.png" />
+    <Content Include="static\img\flags\Guinea-Bissau.png" />
+    <Content Include="static\img\flags\Guinea.png" />
+    <Content Include="static\img\flags\Guyana.png" />
+    <Content Include="static\img\flags\Haiti.png" />
+    <Content Include="static\img\flags\Honduras.png" />
+    <Content Include="static\img\flags\Hong Kong.png" />
+    <Content Include="static\img\flags\Hungary.png" />
+    <Content Include="static\img\flags\Iceland.png" />
+    <Content Include="static\img\flags\India.png" />
+    <Content Include="static\img\flags\Indonezia.png" />
+    <Content Include="static\img\flags\Iran.png" />
+    <Content Include="static\img\flags\Iraq.png" />
+    <Content Include="static\img\flags\Ireland.png" />
+    <Content Include="static\img\flags\Islamic Conference.png" />
+    <Content Include="static\img\flags\Isle of Man.png" />
+    <Content Include="static\img\flags\Israel.png" />
+    <Content Include="static\img\flags\Italy.png" />
+    <Content Include="static\img\flags\Jamaica.png" />
+    <Content Include="static\img\flags\Japan.png" />
+    <Content Include="static\img\flags\Jersey.png" />
+    <Content Include="static\img\flags\Jordan.png" />
+    <Content Include="static\img\flags\Kazakhstan.png" />
+    <Content Include="static\img\flags\Kenya.png" />
+    <Content Include="static\img\flags\Kiribati.png" />
+    <Content Include="static\img\flags\Kosovo.png" />
+    <Content Include="static\img\flags\Kuwait.png" />
+    <Content Include="static\img\flags\Kyrgyzstan.png" />
+    <Content Include="static\img\flags\Laos.png" />
+    <Content Include="static\img\flags\Latvia.png" />
+    <Content Include="static\img\flags\Lebanon.png" />
+    <Content Include="static\img\flags\Lesotho.png" />
+    <Content Include="static\img\flags\Liberia.png" />
+    <Content Include="static\img\flags\Libya.png" />
+    <Content Include="static\img\flags\Liechtenshein.png" />
+    <Content Include="static\img\flags\Lithuania.png" />
+    <Content Include="static\img\flags\Luxembourg.png" />
+    <Content Include="static\img\flags\Macao.png" />
+    <Content Include="static\img\flags\Macedonia.png" />
+    <Content Include="static\img\flags\Madagascar.png" />
+    <Content Include="static\img\flags\Malawi.png" />
+    <Content Include="static\img\flags\Malaysia.png" />
+    <Content Include="static\img\flags\Maldives.png" />
+    <Content Include="static\img\flags\Mali.png" />
+    <Content Include="static\img\flags\Malta.png" />
+    <Content Include="static\img\flags\Marshall Islands.png" />
+    <Content Include="static\img\flags\Martinique.png" />
+    <Content Include="static\img\flags\Mauritania.png" />
+    <Content Include="static\img\flags\Mauritius.png" />
+    <Content Include="static\img\flags\Mexico.png" />
+    <Content Include="static\img\flags\Micronesia.png" />
+    <Content Include="static\img\flags\Moldova.png" />
+    <Content Include="static\img\flags\Monaco.png" />
+    <Content Include="static\img\flags\Mongolia.png" />
+    <Content Include="static\img\flags\Montenegro.png" />
+    <Content Include="static\img\flags\Montserrat.png" />
+    <Content Include="static\img\flags\Morocco.png" />
+    <Content Include="static\img\flags\Mozambique.png" />
+    <Content Include="static\img\flags\Myanmar%28Burma%29.png" />
+    <Content Include="static\img\flags\Namibia.png" />
+    <Content Include="static\img\flags\NATO.png" />
+    <Content Include="static\img\flags\Nauru.png" />
+    <Content Include="static\img\flags\Nepal.png" />
+    <Content Include="static\img\flags\Netherlands Antilles.png" />
+    <Content Include="static\img\flags\Netherlands.png" />
+    <Content Include="static\img\flags\New Caledonia.png" />
+    <Content Include="static\img\flags\New Zealand.png" />
+    <Content Include="static\img\flags\Nicaragua.png" />
+    <Content Include="static\img\flags\Niger.png" />
+    <Content Include="static\img\flags\Nigeria.png" />
+    <Content Include="static\img\flags\North Korea.png" />
+    <Content Include="static\img\flags\Northern Cyprus.png" />
+    <Content Include="static\img\flags\Northern Ireland.png" />
+    <Content Include="static\img\flags\Norway.png" />
+    <Content Include="static\img\flags\Olimpic Movement.png" />
+    <Content Include="static\img\flags\Oman.png" />
+    <Content Include="static\img\flags\OPEC.png" />
+    <Content Include="static\img\flags\Pakistan.png" />
+    <Content Include="static\img\flags\Palau.png" />
+    <Content Include="static\img\flags\Palestine.png" />
+    <Content Include="static\img\flags\Panama.png" />
+    <Content Include="static\img\flags\Papua New Guinea.png" />
+    <Content Include="static\img\flags\Paraguay.png" />
+    <Content Include="static\img\flags\Peru.png" />
+    <Content Include="static\img\flags\Philippines.png" />
+    <Content Include="static\img\flags\Poland.png" />
+    <Content Include="static\img\flags\Portugal.png" />
+    <Content Include="static\img\flags\Puerto Rico.png" />
+    <Content Include="static\img\flags\Qatar.png" />
+    <Content Include="static\img\flags\Red Cross.png" />
+    <Content Include="static\img\flags\Reunion.png" />
+    <Content Include="static\img\flags\Romania.png" />
+    <Content Include="static\img\flags\Russia.png" />
+    <Content Include="static\img\flags\Rwanda.png" />
+    <Content Include="static\img\flags\Saint Lucia.png" />
+    <Content Include="static\img\flags\Samoa.png" />
+    <Content Include="static\img\flags\San Marino.png" />
+    <Content Include="static\img\flags\Sao Tome &amp; Principe.png" />
+    <Content Include="static\img\flags\Saudi Arabia.png" />
+    <Content Include="static\img\flags\Scotland.png" />
+    <Content Include="static\img\flags\Senegal.png" />
+    <Content Include="static\img\flags\Serbia%28Yugoslavia%29.png" />
+    <Content Include="static\img\flags\Seychelles.png" />
+    <Content Include="static\img\flags\Sierra Leone.png" />
+    <Content Include="static\img\flags\Singapore.png" />
+    <Content Include="static\img\flags\Slovakia.png" />
+    <Content Include="static\img\flags\Slovenia.png" />
+    <Content Include="static\img\flags\Solomon Islands.png" />
+    <Content Include="static\img\flags\Somalia.png" />
+    <Content Include="static\img\flags\Somaliland.png" />
+    <Content Include="static\img\flags\South Africa.png" />
+    <Content Include="static\img\flags\South Korea.png" />
+    <Content Include="static\img\flags\Spain.png" />
+    <Content Include="static\img\flags\Sri Lanka.png" />
+    <Content Include="static\img\flags\St Kitts &amp; Nevis.png" />
+    <Content Include="static\img\flags\St Vincent &amp; the Grenadines.png" />
+    <Content Include="static\img\flags\Sudan.png" />
+    <Content Include="static\img\flags\Suriname.png" />
+    <Content Include="static\img\flags\Swaziland.png" />
+    <Content Include="static\img\flags\Sweden.png" />
+    <Content Include="static\img\flags\Switzerland.png" />
+    <Content Include="static\img\flags\Syria.png" />
+    <Content Include="static\img\flags\Tahiti%28French Polinesia%29.png" />
+    <Content Include="static\img\flags\Taiwan.png" />
+    <Content Include="static\img\flags\Tajikistan.png" />
+    <Content Include="static\img\flags\Tanzania.png" />
+    <Content Include="static\img\flags\Thailand.png" />
+    <Content Include="static\img\flags\Timor-Leste.png" />
+    <Content Include="static\img\flags\Togo.png" />
+    <Content Include="static\img\flags\Tonga.png" />
+    <Content Include="static\img\flags\Trinidad &amp; Tobago.png" />
+    <Content Include="static\img\flags\Tunisia.png" />
+    <Content Include="static\img\flags\Turkey.png" />
+    <Content Include="static\img\flags\Turkmenistan.png" />
+    <Content Include="static\img\flags\Turks and Caicos Islands.png" />
+    <Content Include="static\img\flags\Tuvalu.png" />
+    <Content Include="static\img\flags\Uganda.png" />
+    <Content Include="static\img\flags\Ukraine.png" />
+    <Content Include="static\img\flags\United Arab Emirates.png" />
+    <Content Include="static\img\flags\United Nations.png" />
+    <Content Include="static\img\flags\United-Kingdom.png" />
+    <Content Include="static\img\flags\Uruguay.png" />
+    <Content Include="static\img\flags\USA.png" />
+    <Content Include="static\img\flags\Uzbekistan.png" />
+    <Content Include="static\img\flags\Vanutau.png" />
+    <Content Include="static\img\flags\Vatican City.png" />
+    <Content Include="static\img\flags\Venezuela.png" />
+    <Content Include="static\img\flags\Viet Nam.png" />
+    <Content Include="static\img\flags\Virgin Islands British.png" />
+    <Content Include="static\img\flags\Virgin Islands US.png" />
+    <Content Include="static\img\flags\Wales.png" />
+    <Content Include="static\img\flags\Western Sahara.png" />
+    <Content Include="static\img\flags\Yemen.png" />
+    <Content Include="static\img\flags\Zambia.png" />
+    <Content Include="static\img\flags\Zimbabwe.png" />
+    <Content Include="static\img\logo.png" />
+    <Content Include="static\index.html" />
+    <Content Include="static\js\app.js" />
+    <Content Include="static\js\views\charts.js" />
+    <Content Include="static\js\views\main.js" />
+    <Content Include="static\js\views\widgets.js" />
+    <Content Include="static\MasterPage.master.vb" />
+    <Content Include="static\pages-404.html" />
+    <Content Include="static\pages-500.html" />
+    <Content Include="static\pages-login.html" />
+    <Content Include="static\pages-register.html" />
+    <Content Include="static\widgets.html" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GLY\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLY\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLY\学生列表.aspx.cs">
+      <DependentUpon>学生列表.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLY\学生列表.aspx.designer.cs">
+      <DependentUpon>学生列表.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLY\批量添加student.aspx.cs">
+      <DependentUpon>批量添加student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLY\批量添加student.aspx.designer.cs">
+      <DependentUpon>批量添加student.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GLY\管理员母版.Master.cs">
+      <DependentUpon>管理员母版.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLY\管理员母版.Master.designer.cs">
+      <DependentUpon>管理员母版.Master</DependentUpon>
+    </Compile>
+    <Compile Include="GLY\系别列表.aspx.cs">
+      <DependentUpon>系别列表.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GLY\系别列表.aspx.designer.cs">
+      <DependentUpon>系别列表.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="static\MasterPage2.master.cs">
+      <DependentUpon>MasterPage2.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -81,7 +414,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GLY\管理员母版.Master" />
     <None Include="packages.config" />
+    <Content Include="static\css\font-awesome.css.map" />
+    <Content Include="static\fonts\fontawesome-webfont.eot" />
+    <Content Include="static\fonts\fontawesome-webfont.ttf" />
+    <Content Include="static\fonts\fontawesome-webfont.woff" />
+    <Content Include="static\fonts\fontawesome-webfont.woff2" />
+    <Content Include="static\fonts\FontAwesome.otf" />
+    <Content Include="static\fonts\Simple-Line-Icons.eot" />
+    <Content Include="static\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="static\fonts\Simple-Line-Icons.woff" />
+    <Content Include="static\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="static\MasterPage.master" />
+    <Content Include="static\MasterPage2.master" />
+    <Content Include="static\bower.json" />
+    <Content Include="static\package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -98,16 +446,46 @@
       <Project>{9fe00521-3a8b-42b1-814e-585e99407b2e}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{0988c62e-247f-471f-a183-db509c7a3839}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{53995dbb-9836-4647-ad22-865884fdeb9e}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="临时文件\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
